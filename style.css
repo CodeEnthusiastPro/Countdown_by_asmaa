@@ -1,0 +1,217 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', 'sans-serif';
+    box-sizing: border-box;
+}
+
+/* Container styling */
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(background.png);
+    background-position: center;
+    background-size: cover;
+    padding: 0.8%;
+    position: relative;
+    overflow: hidden; /* Ensure content doesn't overflow the container */
+}
+
+/* Logo styling */
+.logo {
+    width: 100px;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+/* Content styling */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    width: 80%;
+}
+
+/* Typing text animation */
+.typing-text {
+    font-size: 72px;
+    font-weight: 700;
+    overflow: hidden;
+    border-right: .15em solid #fff;
+    white-space: nowrap;
+    letter-spacing: .15em;
+    animation:
+        typing 4s steps(30, end) 1s forwards,
+        blink .75s step-end infinite;
+    margin-bottom: 50px;
+    max-width: 100%; /* Ensure the text doesn't overflow on smaller screens */
+}
+
+.typing-text span {
+    color: #621fa2;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Countdown timer styling */
+.launch-time {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.launch-time div {
+    background-color: #5e2e8de5;
+    padding: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    flex-basis: 150px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.launch-time div:hover {
+    transform: scale(1.1);
+}
+
+.launch-time div p {
+    font-size: 72px;
+    font-weight: 700;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.launch-time div span {
+    font-size: 24px;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+/* Rocket animation */
+.rocket {
+    width: 300px;
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    animation: rocket 6s linear infinite;
+}
+
+@keyframes rocket {
+    0% {
+        bottom: 0;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        bottom: 120%;
+        opacity: 0;
+    }
+}
+
+/* Scrolling text effect */
+.scrolling-text {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.scrolling-text span {
+    display: inline-block;
+    animation: scrolling 30s linear infinite;
+}
+
+@keyframes scrolling {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .typing-text {
+        font-size: 36px; /* Smaller text for mobile screens */
+    }
+
+    .launch-time {
+        flex-direction: column; /* Stack the countdown items vertically */
+        gap: 20px;
+    }
+
+    .launch-time div {
+        padding: 20px 10px; /* Smaller padding for mobile */
+        flex-basis: 100px; /* Smaller width for mobile */
+    }
+
+    .launch-time div p {
+        font-size: 36px; /* Smaller numbers for mobile */
+    }
+
+    .launch-time div span {
+        font-size: 16px; /* Smaller labels for mobile */
+    }
+
+    .rocket {
+        width: 200px; /* Smaller rocket for mobile */
+    }
+
+    .scrolling-text {
+        font-size: 18px; /* Smaller scrolling text for mobile */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .typing-text {
+        font-size: 54px; /* Adjust font size for tablet screens */
+    }
+
+    .launch-time div p {
+        font-size: 54px; /* Adjust numbers for tablet screens */
+    }
+
+    .launch-time div span {
+        font-size: 20px; /* Adjust labels for tablet screens */
+    }
+
+    .rocket {
+        width: 250px; /* Adjust rocket size for tablet screens */
+    }
+
+    .scrolling-text {
+        font-size: 20px; /* Adjust scrolling text for tablet screens */
+    }
+}
